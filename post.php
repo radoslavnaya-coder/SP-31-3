@@ -20,7 +20,7 @@ function addPost($title, $content, $filename){
 
 function getPost(){
     $pdo = new PDO('mysql:host=localhost;dbname=31db', "root", "root");
-    $statement = $pdo -> prepare("SELECT * FROM `posts`");
+    $statement = $pdo -> prepare("SELECT * FROM posts");
     $statement -> execute();
     $posts = $statement -> fetchAll(PDO::FETCH_ASSOC);
     return $posts;
